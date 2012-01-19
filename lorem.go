@@ -53,12 +53,12 @@ func intRange(min, max int) int {
 	return n + min
 }
 
-func word(wordLen int) string {	
+func word(wordLen int) string {
 	if wordLen < 1 {
 		wordLen = 1
 	}
 	if wordLen > 13 {
-		wordLen = 13 
+		wordLen = 13
 	}
 
 	n := src.Int() % len(wordlist)
@@ -69,7 +69,7 @@ func word(wordLen int) string {
 		if len(wordlist[n]) == wordLen {
 			return wordlist[n]
 		}
-		n++		
+		n++
 	}
 	return ""
 }
@@ -119,17 +119,19 @@ func Paragraph(min, max int) string {
 	return strings.Join(p, "  ")
 }
 
-
 // Generate a random URL
 func Url() string {
 	n := intRange(0, 3)
-	
+
 	base := `http://www.` + Host()
 
-	switch n { 
-	case 0: break		
-	case 1: base += "/" + Word(2,8) 
-	case 2: base += "/" + Word(2,8) + "/" + Word(2,8) + ".html"
+	switch n {
+	case 0:
+		break
+	case 1:
+		base += "/" + Word(2, 8)
+	case 2:
+		base += "/" + Word(2, 8) + "/" + Word(2, 8) + ".html"
 	}
 	return base
 }
@@ -139,16 +141,19 @@ func Host() string {
 	n := intRange(0, 3)
 	tld := ""
 	switch n {
-	case 0: tld = ".com"
-	case 1: tld = ".net"
-	case 2: tld = ".org"
+	case 0:
+		tld = ".com"
+	case 1:
+		tld = ".net"
+	case 2:
+		tld = ".org"
 	}
 
-	parts := []string{Word(2,8), Word(2,8), tld}
+	parts := []string{Word(2, 8), Word(2, 8), tld}
 	return strings.Join(parts, ``)
 }
 
 // Email
 func Email() string {
-	return Word(4,10) + `@` + Host()
+	return Word(4, 10) + `@` + Host()
 }
