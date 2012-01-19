@@ -12,8 +12,8 @@ Ranged generators
 These will generate a string with a variable number 
 of elements specified by a range you provide
 
--- // generate a word is at least min letters and at most max.
--- Word(min, max int) string  
+    // generate a word with at least min letters and at most max.
+    Word(min, max int) string  
 
 * Sentence(min, max int) string
 * Paragraph(min, max int) string
