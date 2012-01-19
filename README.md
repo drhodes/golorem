@@ -7,11 +7,8 @@ Usage
 import "lorem"
 
 
-Exposed functions
------------------
 Ranged generators
-
-
+-----------------
 These will generate a string with a variable number 
 of elements specified by a range you provide
 
@@ -19,8 +16,11 @@ of elements specified by a range you provide
 * Sentence(min, max int) string
 * Paragraph(min, max int) string
 
+
 Convenience functions
 ---------------------
+Generate some commonly occuring tidbits
+
 * Host() string
 * Email() string
 * Url() string
