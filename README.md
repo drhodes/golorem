@@ -12,19 +12,22 @@ Ranged generators
 These will generate a string with a variable number 
 of elements specified by a range you provide
 
-    // generate a word with at least min letters and at most max.
+    // generate a word with at least min letters and at most max letters.
     Word(min, max int) string  
 
-* Sentence(min, max int) string
-* Paragraph(min, max int) string
+	// generate a sentence with at leat min words and at most max words.
+	Sentence(min, max int) string
+
+	// generate a paragraph with at leat min sentences and at most max sentences.
+	Paragraph(min, max int) string
 
 
 Convenience functions
 ---------------------
 Generate some commonly occuring tidbits
 
-* Host() string
-* Email() string
-* Url() string
+    Host() string
+    Email() string
+    Url() string
 
 
