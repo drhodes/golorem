@@ -1,4 +1,4 @@
-This makes generating lorem ipsum a snap for your project.
+Generating lorem ipsum for your project.
 
 =============
 
@@ -15,14 +15,14 @@ Ranged generators
 These will generate a string with a variable number 
 of elements specified by a range you provide
 
-* lorem.Word(min, max int) string
-* lorem.Sentence(min, max int) string
-* lorem.Paragraph(min, max int) string
+* Word(min, max int) string
+* Sentence(min, max int) string
+* Paragraph(min, max int) string
 
 Convenience functions
 ---------------------
-* lorem.Host() string
-* lorem.Email() string
-* lorem.Url() string
+* Host() string
+* Email() string
+* Url() string
 
 
