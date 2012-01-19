@@ -15,10 +15,10 @@ of elements specified by a range you provide
     // generate a word with at least min letters and at most max letters.
     Word(min, max int) string  
 
-	// generate a sentence with at leat min words and at most max words.
+	// generate a sentence with at least min words and at most max words.
 	Sentence(min, max int) string
 
-	// generate a paragraph with at leat min sentences and at most max sentences.
+	// generate a paragraph with at least min sentences and at most max sentences.
 	Paragraph(min, max int) string
 
 
