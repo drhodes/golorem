@@ -1,4 +1,4 @@
-Generating lorem ipsum for your project.
+Generate lorem ipsum for your project.
 
 =============
 
