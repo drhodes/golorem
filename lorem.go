@@ -89,13 +89,15 @@ func Sentence(min, max int) string {
 	maxcommas := 2
 	numcomma := 0
 	for i := 0; i < n; i++ {
-		// maybe insert a comma, if there's less than two and
+		ws = append(ws, (word(genWordLen())))
+
+		// maybe insert a comma, if there are currently < 2 commas, and
 		// the current word is not the last or first
 		if (src.Int()%n == 0) && numcomma < maxcommas && i < n-1 && i > 2 {
-			ws[len(ws)-1] += ","
+			ws[i-1] += ","
 			numcomma += 1
 		}
-		ws = append(ws, (word(genWordLen())))
+
 	}
 
 	sentence := strings.Join(ws, " ") + "."
