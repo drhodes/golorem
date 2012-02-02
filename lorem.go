@@ -118,7 +118,7 @@ func Paragraph(min, max int) string {
 	for i := 0; i < n; i++ {
 		p = append(p, Sentence(minwords, maxwords))
 	}
-	return strings.Join(p, "  ")
+	return strings.Join(p, " ")
 }
 
 // Generate a random URL
