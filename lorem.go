@@ -5,17 +5,16 @@
 package lorem
 
 import (
-	"rand"
+	"math/rand"
 	"time"
 	"strings"
 )
 
-var src = rand.New(rand.NewSource(time.Nanoseconds()))
+var src = rand.New(rand.NewSource(int64(time.Now().Nanosecond())))
 
 // Generate a natural word len.
 func genWordLen() int {
 	f := src.Float32() * 100
-
 	// a table of word lengths and their frequencies.
 	switch {
 	case f < 1.939:
