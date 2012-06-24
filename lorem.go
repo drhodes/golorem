@@ -48,6 +48,12 @@ func genWordLen() int {
 }
 
 func intRange(min, max int) int {
+	if min == max {
+		return intRange(min, min+1)
+	}
+	if min > max {
+		return intRange(max, min)
+	}
 	n := src.Int() % (max - min)
 	return n + min
 }
