@@ -6,15 +6,12 @@ package lorem
 
 import (
 	"math/rand"
-	"time"
 	"strings"
 )
 
-var src = rand.New(rand.NewSource(int64(time.Now().Nanosecond())))
-
 // Generate a natural word len.
 func genWordLen() int {
-	f := src.Float32() * 100
+	f := rand.Float32() * 100
 	// a table of word lengths and their frequencies.
 	switch {
 	case f < 1.939:
@@ -54,7 +51,7 @@ func intRange(min, max int) int {
 	if min > max {
 		return intRange(max, min)
 	}
-	n := src.Int() % (max - min)
+	n := rand.Int() % (max - min)
 	return n + min
 }
 
@@ -66,7 +63,7 @@ func word(wordLen int) string {
 		wordLen = 13
 	}
 
-	n := src.Int() % len(wordlist)
+	n := rand.Int() % len(wordlist)
 	for {
 		if n >= len(wordlist)-1 {
 			n = 0
@@ -98,7 +95,7 @@ func Sentence(min, max int) string {
 
 		// maybe insert a comma, if there are currently < 2 commas, and
 		// the current word is not the last or first
-		if (src.Int()%n == 0) && numcomma < maxcommas && i < n-1 && i > 2 {
+		if (rand.Int()%n == 0) && numcomma < maxcommas && i < n-1 && i > 2 {
 			ws[i-1] += ","
 			numcomma += 1
 		}
