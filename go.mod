@@ -1,4 +1,4 @@
-module gopkg.in/drhodes/golorem.v1
+module gopkg.in/ro-ag/golorem.v1
 
 go 1.18
 
