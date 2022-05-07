@@ -5,6 +5,8 @@
 package lorem
 
 import (
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
 	"math/rand"
 	"strings"
 )
@@ -73,25 +75,26 @@ func word(wordLen int) string {
 		}
 		n++
 	}
-	return ""
 }
 
-// Generate a word in a specfied range of letters.
+// Word Generate a word in a specified range of letters.
 func Word(min, max int) string {
 	n := intRange(min, max)
 	return word(n)
 }
 
-// Generate a sentence with a specified range of words.
+var Title = cases.Title(language.English)
+
+// Sentence Generate a sentence with a specified range of words.
 func Sentence(min, max int) string {
 	n := intRange(min, max)
 
 	// grab some words
-	ws := []string{}
+	var ws []string
 	maxcommas := 2
 	numcomma := 0
 	for i := 0; i < n; i++ {
-		ws = append(ws, (word(genWordLen())))
+		ws = append(ws, word(genWordLen()))
 
 		// maybe insert a comma, if there are currently < 2 commas, and
 		// the current word is not the last or first
@@ -102,28 +105,28 @@ func Sentence(min, max int) string {
 
 	}
 
-	ws[0] = strings.Title(ws[0])
+	ws[0] = Title.String(ws[0])
 	sentence := strings.Join(ws, " ") + "."
 	return sentence
 }
 
-// Generate a paragraph with a specified range of sentenences.
 const (
 	minwords = 5
 	maxwords = 22
 )
 
+// Paragraph Generate a paragraph with a specified range of sentences.
 func Paragraph(min, max int) string {
 	n := intRange(min, max)
 
-	p := []string{}
+	var p []string
 	for i := 0; i < n; i++ {
 		p = append(p, Sentence(minwords, maxwords))
 	}
 	return strings.Join(p, " ")
 }
 
-// Generate a random URL
+// Url Generate a random URL
 func Url() string {
 	n := intRange(0, 3)
 
@@ -140,7 +143,7 @@ func Url() string {
 	return base
 }
 
-// Host
+// Host generate hostname type
 func Host() string {
 	n := intRange(0, 3)
 	tld := ""
@@ -157,7 +160,7 @@ func Host() string {
 	return strings.Join(parts, ``)
 }
 
-// Email
+// Email generate email type
 func Email() string {
 	return Word(4, 10) + `@` + Host()
 }

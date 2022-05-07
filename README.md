@@ -4,7 +4,7 @@ Generate lorem ipsum for your project.
 
 Usage
 -----
-import "lorem"
+import "gopkg.in/drhodes/golorem.v1"
 
 
 Ranged generators
